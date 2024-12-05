@@ -1,4 +1,4 @@
-package christmas
+package christmas.util
 
 fun <T> retryInput(run: () -> T): T {
     while (true) {
