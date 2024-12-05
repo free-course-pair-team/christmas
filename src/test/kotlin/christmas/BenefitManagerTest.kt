@@ -19,10 +19,8 @@ class BenefitManagerTest {
     )
     @DisplayName("주말, 주중 할인 확인")
     fun discountWeekdaysOrWeekends(input1: Int, output: Int) {
-        val startDayOfWeek = DayOfWeek.FRIDAY
-
         val list = listOf(OrderedMenu("초코케이크", 1), OrderedMenu("아이스크림", 1) )
-        val disCountAmount = BenefitManager().discountWeekdaysOrWeekends(input1, startDayOfWeek, list)
+        val disCountAmount = BenefitManager().discountWeekdaysOrWeekends(input1, list)
         assertEquals(disCountAmount, output)
     }
 }

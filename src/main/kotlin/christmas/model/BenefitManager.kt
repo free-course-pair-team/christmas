@@ -6,8 +6,8 @@ import christmas.model.constant.DayOfWeek
 class BenefitManager {
 
     // 평일, 주말 확인 후 할인
-    fun discountWeekdaysOrWeekends(visitDate: Int, startDayOfWeek: DayOfWeek, orderedMenus: List<OrderedMenu>): Int {
-        return when((visitDate+4) % DayOfWeek.entries.size) {
+    fun discountWeekdaysOrWeekends(visitDate: Int, orderedMenus: List<OrderedMenu>): Int {
+        return when((visitDate-1)%DayOfWeek.entries.size) {
             in DayOfWeek.SUNDAY.ordinal..DayOfWeek.THURSDAY.ordinal -> {
                 orderedMenus.count { it.getCategory() == Category.DESSERT } * 2_023
             }
