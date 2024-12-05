@@ -1,4 +1,4 @@
-package christmas
+package christmas.model
 
 enum class Category(val menu: List<Pair<String, Int>>) {
     APPETIZER(listOf("양송이수프" to 6000, "타파스" to 5500, "시저샐러드" to 8000)),

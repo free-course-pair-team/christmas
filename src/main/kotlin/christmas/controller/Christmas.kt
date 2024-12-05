@@ -1,6 +1,8 @@
 package christmas
 
-import christmas.Month.DECEMBER
+import christmas.model.Month.DECEMBER
+import christmas.view.InputView
+import christmas.view.OutputView
 
 class Christmas(
     private val inputView: InputView,
