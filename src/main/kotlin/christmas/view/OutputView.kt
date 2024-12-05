@@ -30,4 +30,12 @@ class OutputView {
         }
         println("없음\n")
     }
+
+    fun printBenefitsDetail() {
+        println("<혜택 내역>")
+        println("크리스마스 디데이 할인: ")
+        println("평일 할인: ")
+        println("특별 할인: ")
+        println("증정 이벤트: ")
+    }
 }
