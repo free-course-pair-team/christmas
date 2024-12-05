@@ -1,15 +1,15 @@
 package christmas.model.constant
 
 enum class DayOfWeek() {
+    SUNDAY,
     MONDAY,
     TUESDAY,
     WEDNESDAY,
     THURSDAY,
     FRIDAY,
-    SATURDAY,
-    SUNDAY;
+    SATURDAY;
 
     companion object {
-        fun startDayIndex(): Int =  FRIDAY.ordinal
+
     }
 }
