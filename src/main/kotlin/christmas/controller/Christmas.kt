@@ -12,13 +12,14 @@ class Christmas(
 ) {
     fun start() {
         outputView.printWelcomeMessage()
-        val visitDay = validateVisitDay()
-        val orderedMenus = validateMenuAndCount()
+        val visitDay = validateVisitDay() // 방문 일
+        val orderedMenus = validateMenuAndCount() // 주문 메뉴
         outputView.printDayToEvent(visitDay)
         outputView.printOrderMenu(orderedMenus)
-        val orderedMenusBeforeAmount = orderedMenus.sumOf { it.getAmount() }
+        val orderedMenusBeforeAmount = orderedMenus.sumOf { it.getAmount() } // 총 금액
         outputView.printBeforeAmount(orderedMenusBeforeAmount)
         outputView.printPresentChampagne(orderedMenusBeforeAmount)
+        // 방문일과 메뉴, 총금액도?
     }
 
     private fun validateVisitDay(): Int = retryInput {
