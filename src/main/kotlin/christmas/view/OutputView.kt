@@ -19,7 +19,7 @@ class OutputView {
 
     fun printBeforeAmount(amount: Int) {
         println("<할인 전 총주문 금액>")
-        println("${amount.toWonFormat()}원")
+        println("${amount.toWonFormat()}\n")
     }
 
     fun printPresentChampagne(amount: Int) {
@@ -31,11 +31,25 @@ class OutputView {
         println("없음\n")
     }
 
-    fun printBenefitsDetail() {
+    fun printBenefitsInfo(discount: List<Pair<String,Int>>) {
         println("<혜택 내역>")
-        println("크리스마스 디데이 할인: ")
-        println("평일 할인: ")
-        println("특별 할인: ")
-        println("증정 이벤트: ")
+        if (discount.isEmpty()) {
+            println("없음\n")
+            return
+        }
+        discount.forEach {
+            println("${it.first}: -${it.second.toWonFormat()}")
+        }
+        println()
+    }
+
+    fun printAllBenefitsAmount(discount: List<Pair<String,Int>>) {
+        println("<총혜택 금액>")
+        println("-${discount.sumOf { it.second }.toWonFormat()}\n")
+    }
+
+    fun expectPaymentAfterDiscount(amount: Int) {
+        println("<할인 후 예상 결제 금액>")
+        println(amount.toWonFormat())
     }
 }
