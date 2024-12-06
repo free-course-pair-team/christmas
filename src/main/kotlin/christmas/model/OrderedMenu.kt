@@ -2,7 +2,7 @@ package christmas.model
 
 import christmas.model.constant.Category
 
-class OrderedMenu(val name: String, val quantity: Int) {
+class OrderedMenu(private val name: String, val quantity: Int) {
 
     fun getAmount(): Int {
         val menu =
