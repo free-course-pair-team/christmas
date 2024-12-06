@@ -45,11 +45,20 @@ class OutputView {
 
     fun printAllBenefitsAmount(discount: List<Pair<String,Int>>) {
         println("<총혜택 금액>")
+        if (discount.sumOf { it.second } == 0) {
+            println("${discount.sumOf { it.second }.toWonFormat()}\n")
+            return
+        }
         println("-${discount.sumOf { it.second }.toWonFormat()}\n")
     }
 
-    fun expectPaymentAfterDiscount(amount: Int) {
+    fun printExpectPaymentAfterDiscount(amount: Int) {
         println("<할인 후 예상 결제 금액>")
-        println(amount.toWonFormat())
+        println("${amount.toWonFormat()}\n")
+    }
+
+    fun printEventBadge(badge: String) {
+        println("<12월 이벤트 배지>")
+        println(badge)
     }
 }
